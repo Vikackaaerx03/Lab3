@@ -33,6 +33,7 @@
             transition: all 0.8s ease-in-out;
         }
 
+        /* Анімація з’явлення при прокрутці */
         .meme.visible {
             opacity: 1;
             transform: translateY(0);
@@ -44,6 +45,7 @@
             transition: transform 0.3s ease-in-out;
         }
 
+        /* Анімація збільшення картинки при наведенні */
         img:hover {
             transform: scale(1.05);
         }
@@ -58,7 +60,7 @@
             font-style: italic;
         }
 
-        /* ОНОВЛЕНА АНІМАЦІЯ ДЛЯ ПУНКТІВ СПИСКУ */
+        /* Анімація для пунктів списку */
         ul li {
             opacity: 0;
             transform: translateY(30px) scale(0.8);
@@ -68,6 +70,7 @@
             margin: 10px 0;
         }
 
+        
         ul li.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
@@ -131,31 +134,31 @@
 
     <!-- Скрипт для появи елементів -->
     <script>
-        // Поява блоків з класом .meme при прокрутці
-        const memes = document.querySelectorAll('.meme');
+        // Анімація з’явлення мемів при прокрутці
+        const memes = document.querySelectorAll('.meme'); 
 
         const showOnScroll = (elements, delay = 0) => {
-            const triggerBottom = window.innerHeight * 0.85;
+            const triggerBottom = window.innerHeight * 0.85; 
             elements.forEach((el, index) => {
-                const boxTop = el.getBoundingClientRect().top;
-                if (boxTop < triggerBottom) {
+                const boxTop = el.getBoundingClientRect().top; 
+                if (boxTop < triggerBottom) { 
                     setTimeout(() => {
-                        el.classList.add('visible');
-                    }, delay * index);
+                        el.classList.add('visible'); 
+                    }, delay * index); 
                 }
             });
         };
 
         window.addEventListener('scroll', () => {
-            showOnScroll(memes);
+            showOnScroll(memes); // Запускаємо анімацію при прокручуванні
         });
 
         // Анімація пунктів списку з затримкою
         const listItems = document.querySelectorAll('#benefits li');
         listItems.forEach((item, index) => {
             setTimeout(() => {
-                item.classList.add('visible');
-            }, 500 + index * 300); // перша затримка 500мс, далі +300мс кожен
+                item.classList.add('visible'); 
+            }, 500 + index * 300); 
         });
     </script>
 </body>
