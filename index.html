@@ -13,9 +13,11 @@
             text-align: center;
             color: #fff;
         }
+
         h1, h2, h3 {
             color: #fff;
         }
+
         .meme {
             margin: 20px auto;
             padding: 10px;
@@ -23,16 +25,34 @@
             box-shadow: 5px 5px 10px #444;
             max-width: 500px;
             background: #222;
-            border: 5px solid yellow; 
+            border: 5px solid yellow;
+
+            /* Анімація появи при скролі */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
         }
+
+        .meme.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         img {
             width: 100%;
             border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
         }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
         hr {
             border: 1px solid #666;
             margin: 20px 0;
         }
+
         .author {
             margin-top: 30px;
             font-style: italic;
@@ -93,5 +113,7 @@
         <p>&copy; 2025 Created by Vikackaaerx03</p>
     </div>
 
+    <!-- Підключення анімації прокрутки -->
+    <script src="script.js"></script>
 </body>
 </html>
