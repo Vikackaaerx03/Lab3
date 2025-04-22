@@ -11,7 +11,7 @@ function handleScroll() {
         }
     });
 
-    // 🔽 Додаємо анімацію до списку
+    // Додаємо анімацію до списку
     const listItems = document.querySelectorAll('ul li');
     listItems.forEach((item, index) => {
         if (isInViewport(item)) {
